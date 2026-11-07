@@ -1,0 +1,7 @@
+node_modules
+dist
+.DS_Store
+*.local
+过程文件/
+.project_context/
+PROJECT_CONTEXT.md
