@@ -6,6 +6,7 @@ import AbilityCard from '@/components/home/AbilityCard.vue'
 import HomeOrgCard from '@/components/home/HomeOrgCard.vue'
 import DataStrip from '@/components/home/DataStrip.vue'
 import ProductCard from '@/components/home/ProductCard.vue'
+import GitHubIcon from '@/components/icons/GitHubIcon.vue'
 import { hero, abilities, orgs, dataStrip, products, timeline, current, about } from '@/data/home'
 
 useHead({
@@ -100,7 +101,10 @@ useHead({
               :href="a.href"
               target="_blank"
               rel="noopener"
-            >{{ a.label }}</a>
+            >
+              <GitHubIcon v-if="a.icon === 'github'" :size="14" />
+              {{ a.label }}
+            </a>
           </div>
         </div>
       </section>

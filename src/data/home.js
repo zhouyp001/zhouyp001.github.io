@@ -111,7 +111,7 @@ export const products = [
     cover: { type: 'image', src: '/img/gpc.png', alt: 'GPC' },
     actions: [
       { type: 'modal', key: 'gpc', label: '详细演示', primary: true },
-      { type: 'link', href: 'https://webaiharnessroom.github.io/', label: '门户' },
+      { type: 'link', href: 'https://webaiharnessroom.github.io/', label: '门户', icon: 'github' },
     ],
   },
   {
@@ -122,7 +122,7 @@ export const products = [
     cover: { type: 'image', src: '/img/mkstruct.png', alt: 'mkstruct' },
     actions: [
       { type: 'modal', key: 'mkstruct', label: '详细演示', primary: true },
-      { type: 'link', href: 'https://webaiharnessroom.github.io/', label: '门户' },
+      { type: 'link', href: 'https://webaiharnessroom.github.io/', label: '门户', icon: 'github' },
     ],
   },
   {
@@ -201,9 +201,9 @@ export const about = {
   ],
   actions: [
     { label: '邮件', href: 'mailto:ke_yi_zhou@163.com' },
-    { label: 'GitHub', href: 'https://github.com/zhouyp001' },
+    { label: 'GitHub', href: 'https://github.com/zhouyp001', icon: 'github' },
     { label: 'CSDN', href: 'https://blog.csdn.net/ke_yi_' },
-    { label: 'just-did 门户', href: 'https://just-did.zhouyp.top/' },
-    { label: 'WebAIHarnessRoom 门户', href: 'https://webaiharnessroom.github.io/' },
+    { label: 'just-did 门户', href: 'https://just-did.zhouyp.top/', icon: 'github' },
+    { label: 'WebAIHarnessRoom 门户', href: 'https://webaiharnessroom.github.io/', icon: 'github' },
   ],
 }

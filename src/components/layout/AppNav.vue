@@ -1,6 +1,7 @@
 <script setup>
 import { navLinks, orgLinks } from '@/data/site'
 import { useNavStore } from '@/stores/nav'
+import GitHubIcon from '@/components/icons/GitHubIcon.vue'
 
 const nav = useNavStore()
 </script>
@@ -16,6 +17,7 @@ const nav = useNavStore()
         </nav>
         <div class="nav-orgs">
           <a v-for="o in orgLinks" :key="o.href" :href="o.href" target="_blank" rel="noopener">
+            <GitHubIcon v-if="o.icon === 'github'" :size="13" />
             {{ o.label }} <span class="ext">↗</span>
           </a>
         </div>

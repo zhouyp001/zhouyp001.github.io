@@ -5,8 +5,8 @@ export const navLinks = [
 ]
 
 export const orgLinks = [
-  { href: 'https://just-did.zhouyp.top/', label: 'just-did' },
-  { href: 'https://webaiharnessroom.github.io/', label: 'WebAIHarnessRoom' },
+  { href: 'https://just-did.zhouyp.top/', label: 'just-did', icon: 'github' },
+  { href: 'https://webaiharnessroom.github.io/', label: 'WebAIHarnessRoom', icon: 'github' },
 ]
 
 export const footerLinks = [

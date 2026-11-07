@@ -1,6 +1,7 @@
 <script setup>
 import { ref } from 'vue'
 import { useModalStore } from '@/stores/modal'
+import GitHubIcon from '@/components/icons/GitHubIcon.vue'
 
 const props = defineProps({ item: Object })
 const modal = useModalStore()
@@ -44,7 +45,10 @@ const imgError = ref(false)
             :href="a.href"
             target="_blank"
             rel="noopener"
-          >{{ a.label }}</a>
+          >
+            <GitHubIcon v-if="a.icon === 'github'" :size="13" />
+            {{ a.label }}
+          </a>
         </template>
       </div>
     </div>
