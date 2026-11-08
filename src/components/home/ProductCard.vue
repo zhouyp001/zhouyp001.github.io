@@ -28,7 +28,10 @@ const imgError = ref(false)
         <div class="p-title">{{ item.title }}</div>
         <div class="p-time">{{ item.time }}</div>
       </div>
-      <p class="p-desc">{{ item.desc }}</p>
+      <p class="p-desc">
+        <span v-if="item.descHtml" v-html="item.descHtml"></span>
+        <template v-else>{{ item.desc }}</template>
+      </p>
       <div class="p-tags"><span v-for="t in item.tags" :key="t">{{ t }}</span></div>
       <div class="p-actions">
         <template v-for="(a, i) in item.actions" :key="i">

@@ -58,6 +58,7 @@
 .p-title{font-size:.9rem;color:var(--ink);font-weight:750;letter-spacing:-.01em;line-height:1.35}
 .p-time{font-size:.68rem;color:var(--muted);font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap;font-family:ui-monospace,"SF Mono",Menlo,Consolas,monospace}
 .p-desc{font-size:.76rem;color:var(--body);line-height:1.65;flex:1}
+.p-desc strong{color:var(--ink);font-weight:700}
 .p-tags{display:flex;flex-wrap:wrap;gap:4px}
 .p-tags span{font-size:.66rem;color:var(--body);background:#f4f7fb;border:1px solid var(--line);padding:1px 7px;border-radius:5px;font-weight:500}
 .p-actions{display:flex;gap:6px;margin-top:2px}

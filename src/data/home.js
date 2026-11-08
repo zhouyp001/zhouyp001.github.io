@@ -96,6 +96,7 @@ export const products = [
     title: 'just-did · 人生日志',
     time: '2026.06',
     desc: '本地优先的跨端记录系统，桌面端唯一权威数据源，手机端扫码记录，两阶段同步与按批 ID 幂等提交。',
+    descHtml: '跨端记录系统，桌面端唯一权威数据源，手机端扫码记录，两阶段同步与按批 ID 幂等提交。<strong>手机端已上架华为应用商店</strong>',
     tags: ['C++', 'Android', '可靠性'],
     cover: { type: 'image', src: '/img/did.png', alt: 'just-did 人生日志' },
     actions: [
@@ -104,10 +105,10 @@ export const products = [
     ],
   },
   {
-    title: 'GPC · GenerateProjectContext',
+    title: 'GCP · 代码上下文生成',
     time: '2026.10',
     desc: '把任意代码项目整理成 Markdown 上下文，语言感知降噪、AST 结构摘要、Git 历史汇总。',
-    tags: ['Python', 'AI Context'],
+    tags: ['Python', 'Harness', 'CLI/GUI'],
     cover: { type: 'image', src: '/img/gpc.png', alt: 'GPC' },
     actions: [
       { type: 'modal', key: 'gpc', label: '详细演示', primary: true },
@@ -115,10 +116,10 @@ export const products = [
     ],
   },
   {
-    title: 'mkstruct',
+    title: 'mkstruct · 项目结构创建',
     time: '2026.10',
     desc: 'tree 风格结构文本一键生成真实目录与空文件，自动识别与纠错、行内注释忽略、幂等安全。',
-    tags: ['Python', 'CLI/GUI'],
+    tags: ['Python', 'Harness', 'CLI/GUI'],
     cover: { type: 'image', src: '/img/mkstruct.png', alt: 'mkstruct' },
     actions: [
       { type: 'modal', key: 'mkstruct', label: '详细演示', primary: true },
@@ -126,7 +127,7 @@ export const products = [
     ],
   },
   {
-    title: '车牌隐藏 · 本地视频脱敏',
+    title: 'ZPlateBlur · 车牌隐藏',
     time: '2025.08',
     desc: '本地视频车牌检测与高斯模糊，跳帧加速、CPU/GPU 自适应，数据不出设备。',
     tags: ['Python', 'YOLO'],
@@ -134,15 +135,15 @@ export const products = [
     actions: [{ type: 'modal', key: 'plateblur', label: '详细演示', primary: true }],
   },
   {
-    title: '智能猫笼 · Three.js 数字孪生',
+    title: 'szls-msp · 智能猫笼',
     time: '2025.05',
     desc: '猫砂盆控制前端，三维展示设备状态，与 ESP32 端侧实现交互。',
-    tags: ['Three.js', '3D'],
+    tags: ['Three.js', 'ESP32'],
     cover: { type: 'image', src: '/img/znml.gif', alt: '智能猫笼' },
     actions: [{ type: 'link', href: 'https://szls-msp.zhouyp.top/', label: '前往', primary: true }],
   },
   {
-    title: '宫格相册生成器',
+    title: 'GAL · 宫格相册生成器',
     time: '2025.03',
     desc: '把照片排成可分享的宫格相册，关注视觉布局与组件化。',
     tags: ['在线工具'],
@@ -150,15 +151,15 @@ export const products = [
     actions: [{ type: 'link', href: 'https://gal.zhouyp.top/', label: '前往', primary: true }],
   },
   {
-    title: '内网截屏翻译 · 离线 OCR',
+    title: 'KEYI-RTIS · 内网截屏翻译',
     time: '2022.11',
     desc: '无网环境下截图取字与翻译，解决内网文字不可复制的问题。',
-    tags: ['Python', '离线OCR'],
+    tags: ['Python', 'Tesseract-OCR'],
     cover: { type: 'image', src: '/img/rtis.png', alt: '内网截屏翻译' },
     actions: [{ type: 'modal', key: 'rtis', label: '详细演示', primary: true }],
   },
   {
-    title: 'KEYI-BLOG · Java Web 博客系统',
+    title: 'KEYI-BLOG · 博客系统',
     time: '2020.10',
     desc: 'Spring / MyBatis / Shiro 分层架构实践，早期全栈项目。',
     tags: ['Java', 'Spring', '全栈'],
