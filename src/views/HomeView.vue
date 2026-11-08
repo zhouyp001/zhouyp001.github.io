@@ -39,16 +39,18 @@ useHead({
       <div class="chips">
         <span v-for="c in hero.chips" :key="c" class="chip">{{ c }}</span>
       </div>
-      <div class="cta">
-        <a class="btn btn-main" href="#products">查看精选产品</a>
-        <RouterLink class="btn btn-ghost" to="/github">GitHub 档案</RouterLink>
-        <RouterLink class="btn btn-ghost" to="/csdn">CSDN 档案</RouterLink>
-      </div>
     </div>
   </header>
 
   <main>
     <div class="wrap">
+      <section id="products" v-reveal class="reveal">
+        <SectionHead title="精选产品" sub="just-did 置顶，其余按开始时间降序" />
+        <div class="product-grid">
+          <ProductCard v-for="p in products" :key="p.title" :item="p" />
+        </div>
+      </section>
+
       <section id="ability" v-reveal class="reveal">
         <SectionHead title="能力与经验" sub="四条能力主线 · 两个开源组织 · 两个平台的数据快照" />
         <div class="ability-grid">
@@ -58,13 +60,6 @@ useHead({
           <HomeOrgCard v-for="o in orgs" :key="o.name" :item="o" />
         </div>
         <DataStrip :data="dataStrip" />
-      </section>
-
-      <section id="products" v-reveal class="reveal">
-        <SectionHead title="精选产品" sub="just-did 置顶，其余按开始时间降序" />
-        <div class="product-grid">
-          <ProductCard v-for="p in products" :key="p.title" :item="p" />
-        </div>
       </section>
 
       <section id="journey" v-reveal class="reveal">
@@ -97,12 +92,12 @@ useHead({
             <a
               v-for="a in about.actions"
               :key="a.href"
-              class="btn-outline"
+              class="btn-outline btn-outline--half"
               :href="a.href"
               target="_blank"
               rel="noopener"
             >
-              <GitHubIcon v-if="a.icon === 'github'" :size="14" />
+              <GitHubIcon v-if="a.icon === 'github'" :size="10" />
               {{ a.label }}
             </a>
           </div>

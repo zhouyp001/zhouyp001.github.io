@@ -1,7 +1,7 @@
 export const navLinks = [
   { to: '/', label: '首页' },
-  { to: '/github', label: '开源' },
-  { to: '/csdn', label: '分享' },
+  { to: '/github', label: '我的Github' },
+  { to: '/csdn', label: '我的CSDN' },
 ]
 
 export const orgLinks = [
@@ -19,8 +19,8 @@ export const footerLinks = [
 
 export const tocByRoute = {
   '/': [
-    { id: 'ability', label: '能力与经验' },
     { id: 'products', label: '精选产品' },
+    { id: 'ability', label: '能力与经验' },
     { id: 'journey', label: '演进与当前' },
     { id: 'about', label: '关于与联系' },
   ],

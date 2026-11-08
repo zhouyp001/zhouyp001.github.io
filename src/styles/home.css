@@ -83,6 +83,18 @@
 .about-text code{font-family:ui-monospace,"SF Mono",Menlo,Consolas,monospace;font-size:.85em;background:#f4f7fb;border:1px solid var(--line);padding:1px 6px;border-radius:5px;color:var(--ink)}
 .about-actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px;padding-top:20px;border-top:1px dashed var(--line)}
 
+/* “关于与联系”底部按钮：相对全局 .btn-outline 缩到 0.7 倍（0.6 基础上略放大） */
+.about-actions .btn-outline--half{
+  font-size:.57rem;
+  padding:6px 11px;
+  gap:4px;
+  border-radius:6px;
+}
+.about-actions .btn-outline--half .gh-icon{
+  width:10px;
+  height:10px;
+}
+
 /* RESPONSIVE */
 @media (max-width:1024px){
   .product-grid{grid-template-columns:repeat(3,1fr)}

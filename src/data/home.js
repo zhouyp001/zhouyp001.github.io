@@ -170,7 +170,7 @@ export const products = [
 export const timeline = {
   variant: 'home',
   items: [
-    { date: '2017 — 2018', title: '写作起点', desc: '算法与数据结构笔记，POJ/HDU 题解，排序与查找树。' },
+    { date: '2017 — 2018', title: '写作起点', desc: 'ACM竞赛过程中产生的算法与数据结构笔记，POJ/HDU 题解，排序与查找树。' },
     { date: '2019 — 2022', title: 'Java Web 与工程化', desc: 'KEYI-BLOG、离线 OCR、博客迁移脚本，Spring / MyBatis / Shiro 分层架构。' },
     { date: '2022 — 2024', title: '高并发架构与业务系统', desc: '缓存结构设计、系统架构、稳定性与性能；以 Redis 缓存文章作为公开证据。' },
     { date: '2024 — 2026', title: '视频流 + AI 工程化与本地优先', desc: 'ZVisionEdge、PlateBlur、just-did、WebAIHarnessRoom；端侧推理、AI 上下文工程。' },

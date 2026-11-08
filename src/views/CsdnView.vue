@@ -30,8 +30,12 @@ useHead({
         <span v-for="c in hero.chips" :key="c" class="chip">{{ c }}</span>
       </div>
       <div class="cta">
-        <a class="btn btn-main" href="#picks">查看精选文章</a>
-        <a class="btn btn-ghost" href="#about">了解写作档案</a>
+        <a
+          class="btn btn-main"
+          href="https://blog.csdn.net/ke_yi_"
+          target="_blank"
+          rel="noopener"
+        >访问 CSDN ↗</a>
       </div>
     </div>
   </header>

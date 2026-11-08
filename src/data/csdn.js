@@ -4,7 +4,7 @@ export const hero = {
   badge: 'Technical Blog · Since 2017',
   name: 'ke_yi_',
   tagline: '一个记录开发中“卡住”瞬间的技术博客——报错排查、函数用法、语言机制细节。相信一篇短小的笔记，也值得被写下来。',
-  chips: ['CSDN 博客', '117 篇文章', '18 个专栏', '9 年创作跨度'],
+  chips: ['117 篇文章', '18 个专栏', '9 年创作跨度'],
 }
 
 export const metrics = [
