@@ -1,9 +1,9 @@
 export const hero = {
-  badge: 'GitHub · 技术实践与生产级工具分享',
+  badge: 'GitHub · 开源作品与工程探索',
   name: 'zhouyp001',
-  kicker: '本地优先 · 端侧智能 · AI 协作 · 元工具',
-  taglinePrefix: '这里既是长期技术实践的一个切面，也是生产级工具的开源分享：既有可直接交付使用的完整系统，也有快速验证想法的实验。它记录真实的问题与取舍，',
-  taglineStrong: '是技术画像的一部分，而非全部',
+  kicker: '开源工具 · 本地优先 · AI 工程化 · 跨端产品',
+  taglinePrefix: '这里汇集不同阶段的开源作品与技术探索：有围绕明确问题持续打磨的独立工具，也有用于验证思路的实验项目。仓库记录的是问题背景、设计取舍与实现过程，',
+  taglineStrong: '是个人技术探索的公开切面',
   chips: [
     { num: '619', label: '近一年贡献' },
     { num: '2', label: '开源组织' },
@@ -17,15 +17,15 @@ export const orgs = [
     name: 'just-did',
     href: 'https://github.com/just-did',
     color: 'var(--c2)',
-    desc: '面向开源分享的跨端本地优先记录系统。数据绝不出网，电脑端是唯一权威数据源；桌面端四层静态库、一键便携打包，手机端 Domain 层零 Android 依赖。',
-    meta: 'C++17 / Qt 6.8 / Kotlin / Compose',
+    desc: '围绕本地优先的人生日志产品组织桌面端与手机端两个独立仓库。桌面端承担本地数据管理与权威存储，手机端提供便捷记录入口；通过明确的数据边界、两阶段同步、批次幂等提交与启动恢复处理跨端异常场景。',
+    meta: 'just-did-desktop · just-did-app · C++17 / Qt / Kotlin / Compose',
   },
   {
     name: 'WebAIHarnessRoom',
     href: 'https://github.com/WebAIHarnessRoom',
     color: 'var(--c6)',
-    desc: '面向开源分享的 Web AI Harness 工具集。不把 Web AI 降格为纯 API 调用；Harness 自治，Room 只做归集。两个工具均为零第三方依赖、CLI/GUI 双形态。',
-    meta: 'Python / CLI / GUI',
+    desc: '一个围绕 Web AI Harness 与工程效率工具展开的开源空间。Room 不是单一工具，而是用于归集、组织和展示独立 Harness 的协作空间；具体工具各自聚焦一个明确问题，保持边界清晰、可单独使用。当前包含 GPC（GenerateProjectContext）与 mkstruct：前者整理代码项目上下文，后者根据结构文本创建目录与文件。',
+    meta: 'GPC · mkstruct · Python / CLI / GUI · 轻量依赖',
   },
 ]
 
@@ -114,6 +114,7 @@ export const projectGroups = [
         desc: '宫格相册排版工具，关注视觉布局与组件化。',
         tags: ['JavaScript', 'CSS Grid'],
         href: 'https://github.com/zhouyp001/grid-album-layout',
+        actions: [{ label: '在线体验', href: 'https://gal.zhouyp.top/' }],
       },
       {
         name: 'szls-msp',
@@ -121,6 +122,7 @@ export const projectGroups = [
         desc: 'Three.js 数字孪生猫砂盆控制前端，三维展示与交互。',
         tags: ['Three.js', 'JavaScript', '3D'],
         href: 'https://github.com/zhouyp001/szls-msp',
+        actions: [{ label: '在线体验', href: 'https://szls-msp.zhouyp.top/' }],
       },
       {
         name: 'pool-for-accumulation-app',
@@ -141,6 +143,7 @@ export const projectGroups = [
         desc: 'Java Web 博客系统，早期全栈与分层架构实践。2022 年活跃期核心项目。',
         tags: ['Java', 'Spring', 'MyBatis', 'Shiro'],
         href: 'https://github.com/zhouyp001/KEYI-BLOG',
+        actions: [{ label: '开发过程', modal: 'blog' }],
       },
       {
         name: 'KEYI-RTIS',
@@ -148,6 +151,7 @@ export const projectGroups = [
         desc: '离线截图 OCR，解决无网络环境下图片文字不可复制的问题。',
         tags: ['Python', 'OCR', '离线'],
         href: 'https://github.com/zhouyp001/KEYI-RTIS',
+        actions: [{ label: '详细演示', modal: 'rtis' }],
       },
       {
         name: 'ShiftBlogByPython',
@@ -163,7 +167,7 @@ export const projectGroups = [
 export const timeline = {
   variant: 'gh',
   items: [
-    { date: '2026.11', title: '双组织门户同步更新', desc: 'WebAIHarnessRoom 门户网站（11.3）与个人门户（11.5）更新，近期活跃重心完全集中在两个组织下的新项目上。', hot: true },
+    { date: '2026.11', title: '个人门户与开源空间更新', desc: 'WebAIHarnessRoom 门户与个人技术门户同步整理，重点呈现独立 Harness 工具及其组织关系。', hot: true },
     { date: '2026.10', title: 'WebAIHarnessRoom 进入活跃期', desc: 'mkstruct 于 10.28 更新，元工具线开始成型。', hot: true },
     { date: '2026.09', title: 'just-did 组织全面活跃', desc: 'just-did-desktop（9.4）、组织首页（9.7）、just-did-app（9.10）密集更新。', hot: true },
     { date: '2026.07', title: '端侧 AI + AI 工程化进入活跃期', desc: 'ZVisionEdge（7.15）与 nuitka-pack-skill（7.11）更新，技术重心开始转移。' },
@@ -201,9 +205,10 @@ export const layers = [
 ]
 
 export const aboutHtml = [
-  '这个 GitHub 保留了 2019 年以来的 <strong>14 个重点仓库</strong>，至今持续更新。它不是按语言或技术栈陈列的仓库集合，而是一个随时间累积的实践样本——<strong>一部分项目以生产级工具为目标，并开源分享出去；另一部分则是快速验证想法的实验</strong>。共同的出发点是：把数据留在本地、让端侧推理跑得动、少花时间在重复的工程琐事上。',
+  '这个 GitHub 汇集了 2019 年以来的开源作品与技术探索。它不是个人能力的完整证明，也不只是按语言或技术栈排列的仓库清单，而是一个持续积累的公开实践样本：既有围绕具体问题打磨的工具和应用，也有用于验证思路的实验项目。',
+  '<strong>WebAIHarnessRoom</strong> 是其中一条组织化的工具探索主线。Room 负责归集与呈现，GPC 和 mkstruct 则是两个边界独立的工具：一个将代码项目整理为 AI 可理解的上下文，另一个把结构文本转换为实际目录与文件。它们共享轻量、可独立使用、兼顾 CLI 与 GUI 的工程取向，但各自解决不同问题。',
   '节奏并不均匀。<strong>2019—2022 年</strong>是探索期，从 KEYI-BLOG 的 Java Web 全栈、KEYI-RTIS 的离线 OCR 到 ShiftBlogByPython 的脚本自动化，技术方向在几个领域之间游走。<strong>2026 年 4 月</strong>经历了一次集中整理，随后从 <strong>7 月起</strong>进入新的活跃期——重心转向本地优先、端侧智能和 AI 工程化，内容也从“解决自己的问题”转向“把方法沉淀成可复用的系统与工具，并进一步做成可直接交付他人的生产级工具”。',
-  '14 个重点仓库大致构成三层。<strong class="about-strong-layer">主线层</strong>是当前活跃的 5 个项目，也都指向生产级工具这个目标：just-did 的桌面端与手机端是<strong>两个已发布正式版本、可一键打包交付的完整系统</strong>；WebAIHarnessRoom 下的两个元工具<strong>零第三方依赖、CLI/GUI 双形态</strong>，面向开源直接使用；nuitka-pack-skill 则把打包经验封装成<strong>可调用的 Claude Code Skill</strong>。<strong class="about-strong-layer">分支层</strong>是 6 个方向性探索：ZVisionEdge 与 PlateBlur 把推理推到端侧，keyi-hide-license-plate 延续本地脱敏，grid-album-layout、szls-msp、pool-for-accumulation-app 则是前端与跨端实验。<strong class="about-strong-layer">存档层</strong>是 3 个早期项目：KEYI-BLOG、KEYI-RTIS、ShiftBlogByPython，构成 2019—2022 年的技术积累。主线按问题域检索，分支按兴趣回溯，存档按时间线浏览。',
+  '重点仓库大致构成三层。<strong class="about-strong-layer">主线层</strong>是当前活跃的 5 个项目，也都指向生产级工具这个目标：just-did 的桌面端与手机端是<strong>两个已发布正式版本、可一键打包交付的完整系统</strong>；WebAIHarnessRoom 下的两个元工具<strong>零第三方依赖、CLI/GUI 双形态</strong>，面向开源直接使用；nuitka-pack-skill 则把打包经验封装成<strong>可调用的 Claude Code Skill</strong>。<strong class="about-strong-layer">分支层</strong>是 6 个方向性探索：ZVisionEdge 与 PlateBlur 把推理推到端侧，keyi-hide-license-plate 延续本地脱敏，grid-album-layout、szls-msp、pool-for-accumulation-app 则是前端与跨端实验。<strong class="about-strong-layer">存档层</strong>是 3 个早期项目：KEYI-BLOG、KEYI-RTIS、ShiftBlogByPython，构成 2019—2022 年的技术积累。主线按问题域检索，分支按兴趣回溯，存档按时间线浏览。',
 ]
 
 export const practices = [

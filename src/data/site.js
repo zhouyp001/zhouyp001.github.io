@@ -20,9 +20,8 @@ export const footerLinks = [
 export const tocByRoute = {
   '/': [
     { id: 'products', label: '精选产品' },
-    { id: 'ability', label: '能力与经验' },
+    { id: 'ability', label: '技术探索方向' },
     { id: 'journey', label: '演进与当前' },
-    { id: 'about', label: '关于与联系' },
   ],
   '/github': [
     { id: 'orgs', label: 'GitHub 组织' },

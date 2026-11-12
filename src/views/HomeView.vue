@@ -3,11 +3,9 @@ import { useHead } from '@unhead/vue'
 import SectionHead from '@/components/common/SectionHead.vue'
 import VTimeline from '@/components/common/VTimeline.vue'
 import AbilityCard from '@/components/home/AbilityCard.vue'
-import HomeOrgCard from '@/components/home/HomeOrgCard.vue'
 import DataStrip from '@/components/home/DataStrip.vue'
 import ProductCard from '@/components/home/ProductCard.vue'
-import GitHubIcon from '@/components/icons/GitHubIcon.vue'
-import { hero, abilities, orgs, dataStrip, products, timeline, current, about } from '@/data/home'
+import { hero, abilities, dataStrip, products, timeline, current } from '@/data/home'
 
 useHead({
   title: 'ZHOUYP · 个人门户 · Java 高并发与架构 / 视频流与 AI 工程化 / 开源分享',
@@ -45,19 +43,16 @@ useHead({
   <main>
     <div class="wrap">
       <section id="products" v-reveal class="reveal">
-        <SectionHead title="精选产品" sub="just-did 置顶，其余按开始时间降序" />
+        <SectionHead title="精选产品" sub="两个重点作品并列呈现，另以独立视觉工具补充展示" />
         <div class="product-grid">
           <ProductCard v-for="p in products" :key="p.title" :item="p" />
         </div>
       </section>
 
       <section id="ability" v-reveal class="reveal">
-        <SectionHead title="能力与经验" sub="四条能力主线 · 两个开源组织 · 两个平台的数据快照" />
+        <SectionHead title="技术探索方向" sub="围绕软件工程、AI 工具、跨端产品与视觉计算的持续探索" />
         <div class="ability-grid">
           <AbilityCard v-for="a in abilities" :key="a.title" :item="a" />
-        </div>
-        <div class="org-grid">
-          <HomeOrgCard v-for="o in orgs" :key="o.name" :item="o" />
         </div>
         <DataStrip :data="dataStrip" />
       </section>
@@ -81,28 +76,6 @@ useHead({
         </div>
       </section>
 
-      <section id="about" v-reveal class="reveal">
-        <SectionHead title="关于与联系" sub="身份 · 可合作方向 · 联系方式" />
-        <div class="about">
-          <div v-for="r in about.rows" :key="r.label" class="about-row">
-            <div class="about-label">{{ r.label }}</div>
-            <div class="about-text" v-html="r.html"></div>
-          </div>
-          <div class="about-actions">
-            <a
-              v-for="a in about.actions"
-              :key="a.href"
-              class="btn-outline btn-outline--half"
-              :href="a.href"
-              target="_blank"
-              rel="noopener"
-            >
-              <GitHubIcon v-if="a.icon === 'github'" :size="10" />
-              {{ a.label }}
-            </a>
-          </div>
-        </div>
-      </section>
     </div>
   </main>
 </template>

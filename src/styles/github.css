@@ -94,3 +94,10 @@
   .project-grid{grid-template-columns:1fr}
   .practice-grid{grid-template-columns:1fr}
 }
+
+/* REPOSITORY ACTIONS: preserve demo / online-entry affordances on their own repositories */
+.pc-name{text-decoration:none}
+.pc-name:hover{color:var(--primary);text-decoration:underline}
+.pc-actions{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+.pc-actions .btn-sm{display:inline-flex;align-items:center;justify-content:center;padding:5px 9px;border:1px solid var(--line);border-radius:7px;background:var(--card);color:var(--ink);font-size:.72rem;font-weight:600;text-decoration:none;cursor:pointer}
+.pc-actions .btn-sm:hover{background:#eef2ff;border-color:#cfd8ff;color:var(--primary)}

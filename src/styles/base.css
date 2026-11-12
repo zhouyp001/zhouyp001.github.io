@@ -51,7 +51,8 @@ button{font-family:inherit}
 .foot-note{font-size:.72rem;color:#5f6c82;margin-top:10px;max-width:640px;line-height:1.85}
 .foot-links{display:flex;flex-wrap:wrap;gap:14px;margin-top:10px}
 .foot-links a{font-size:.78rem}
-.foot-bottom{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;margin-top:24px;padding-top:16px;border-top:1px solid rgba(255,255,255,.07);font-size:.72rem;color:#5f6c82;font-family:ui-monospace,"SF Mono",Menlo,Consolas,monospace}
+.foot-bottom{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;align-items:center;margin-top:24px;padding-top:16px;border-top:1px solid rgba(255,255,255,.07);font-size:.72rem;color:#5f6c82;font-family:ui-monospace,"SF Mono",Menlo,Consolas,monospace}
+.foot-bottom .foot-email{margin-left:auto;color:#a5b4fc;font-size:.74rem;white-space:nowrap}
 
 /* ---------- BUTTONS ---------- */
 .btn{display:inline-flex;align-items:center;gap:6px;font-size:.86rem;font-weight:600;padding:10px 22px;border-radius:10px;border:1px solid transparent;cursor:pointer;transition:transform .2s,box-shadow .2s,background .2s,border-color .2s}

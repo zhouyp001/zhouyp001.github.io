@@ -14,7 +14,7 @@ import {
 useHead({
   title: 'GitHub 档案 · ZHOUYP',
   meta: [
-    { name: 'description', content: 'ZHOUYP 的 GitHub 档案：619 近一年贡献 · 14 个重点仓库 · 2 个开源组织 · 5 种语言。' },
+    { name: 'description', content: 'ZHOUYP 的 GitHub 开源作品与技术探索档案，包含独立工具、跨端应用与历史项目。' },
   ],
 })
 </script>
@@ -41,14 +41,14 @@ useHead({
   <main>
     <div class="wrap">
       <section id="orgs" v-reveal class="reveal">
-        <SectionHead title="GitHub 组织" sub="两个公开组织，承载近期主要的项目线。" />
+        <SectionHead title="GitHub 组织" sub="两个组织承载不同的开源项目方向：just-did 聚焦跨端本地优先产品，WebAIHarnessRoom 组织独立的 AI 工程工具。" />
         <div class="org-grid">
           <OrgLinkCard v-for="o in orgs" :key="o.name" :item="o" />
         </div>
       </section>
 
       <section id="repos" v-reveal class="reveal">
-        <SectionHead title="仓库矩阵" sub="按问题域组织的重点仓库。同一仓库可能同时属于多个方向，这里取其主要归属。" />
+        <SectionHead title="仓库矩阵" sub="按问题域整理的开源仓库。项目卡片中的体验与演示入口直接对应原有项目资源。" />
         <ProjectGroup v-for="g in projectGroups" :key="g.title" :group="g" />
       </section>
 

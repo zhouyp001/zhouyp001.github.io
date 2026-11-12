@@ -1,63 +1,39 @@
 export const hero = {
-  badge: 'Personal Portal · 技术实践与开源分享',
+  badge: 'Personal Portal · 技术探索与开源作品',
   name: 'ZHOUYP',
-  roles: ['Java 高并发与架构', '视频流与 AI 工程化', '开源分享'],
-  sub: '6 年 Java 开发经验，其中 3 年架构、2 年视频流 + AI 工程化经验；有高并发系统架构开发经验。熟悉 Java 生态，能使用 Python、前端、C++ 进行开发。GitHub 开源 just-did（人生日志）与 WebAIHarnessRoom（驾驭工程）两个系列产品，以及若干小工具与实践分享。',
+  roles: ['软件工程', 'AI 工具与工程化', '跨端产品与本地优先'],
+  sub: '这里记录个人在软件工程、工具设计与产品实践中的持续探索。通过开源项目分享解决问题的思路、架构取舍与可复用工具，也保留不同阶段的学习记录与技术积累。',
   platform: [
     { label: 'CSDN', value: 'ke_yi_' },
     { label: 'GitHub', value: 'zhouyp001' },
   ],
-  chips: ['Java 6 年', '架构 3 年', '视频流 + AI 2 年', '高并发', 'Python / 前端 / C++', '开源分享'],
+  chips: ['软件工程', 'AI 工程化', '跨端应用', '本地优先', '开源工具'],
 }
 
 export const abilities = [
   {
-    title: 'Java 与高并发架构',
-    desc: '6 年 Java、3 年架构，做过高并发系统架构与缓存结构设计。',
-    tags: ['Java', '高并发', '系统架构'],
+    title: '软件工程与系统设计',
+    desc: '关注复杂问题拆解、模块边界、可靠性设计与工程结构，让系统更容易理解、维护和演进。',
+    tags: ['系统设计', '架构思维', '可靠性'],
     color: 'var(--c1)',
   },
   {
-    title: '视频流与 AI 工程化',
-    desc: '2 年视频流 + AI 工程化，覆盖端侧推理、视频脱敏与性能监控。',
-    tags: ['视频流', '端侧推理', '机器学习'],
+    title: 'AI 工程化与开发工具',
+    desc: '探索 AI 与软件开发流程的结合，将重复性工作沉淀为上下文工具、自动化流程和可复用能力。',
+    tags: ['AI Context', 'Harness', '开发效率'],
     color: 'var(--c2)',
   },
   {
-    title: '跨端与本地优先',
-    desc: '桌面权威数据源、手机记录端、两阶段同步与按批 ID 幂等提交。',
-    tags: ['跨端', '两阶段同步', '幂等设计'],
+    title: '跨端产品与本地优先',
+    desc: '关注多端协作、数据主权与弱网可靠性，通过明确的数据边界和同步机制控制复杂度。',
+    tags: ['跨端应用', '本地优先', '幂等设计'],
     color: 'var(--c3)',
   },
   {
-    title: '工具化与工程效率',
-    desc: 'CLI/GUI、代码上下文生成、打包流程 Skill 化。',
-    tags: ['CLI/GUI', 'AI Context', 'Agent Skill'],
+    title: '视觉计算与实用工具',
+    desc: '围绕图像、视频和日常工作流制作轻量工具，重视可操作性、隐私边界与实际使用体验。',
+    tags: ['计算机视觉', '视频处理', '实用工具'],
     color: 'var(--c5)',
-  },
-]
-
-export const orgs = [
-  {
-    name: 'just-did',
-    em: '人生日志',
-    color: 'var(--c2)',
-    descHtml: '<b>功能：</b>本地优先的跨端人生日志系统，桌面端唯一权威数据源、手机端扫码记录。<br><b>可靠性：</b>两阶段同步、按批 ID 幂等提交与启动自动恢复，详见门户可靠性页。',
-    actions: [
-      { label: '门户', href: 'https://just-did.zhouyp.top/' },
-      { label: '可靠性', href: 'https://just-did.zhouyp.top/reliability.html' },
-      { label: 'GitHub 组织', href: 'https://github.com/just-did' },
-    ],
-  },
-  {
-    name: 'WebAIHarnessRoom',
-    em: '驾驭工程',
-    color: 'var(--c1)',
-    descHtml: '<b>功能：</b>面向开源分享的 Web AI Harness 工具集，Harness 自治、Room 只做归集。<br><b>工程：</b>工具均零第三方依赖、CLI/GUI 双形态。',
-    actions: [
-      { label: '门户', href: 'https://webaiharnessroom.github.io/' },
-      { label: 'GitHub 组织', href: 'https://github.com/WebAIHarnessRoom' },
-    ],
   },
 ]
 
@@ -80,7 +56,7 @@ export const dataStrip = {
       items: [
         { value: '619', label: '近一年贡献' },
         { value: '14', label: '个重点仓库' },
-        { value: '2', label: '个开源组织' },
+        { value: '3', label: '条重点项目线' },
         { value: '5', label: '种语言' },
       ],
     },
@@ -93,78 +69,71 @@ export const dataStrip = {
 
 export const products = [
   {
-    title: 'just-did · 人生日志',
+    title: 'WebAIHarnessRoom',
+    subtitle: 'AI 工程工具空间 · 两个独立工具',
+    kicker: 'OPEN-SOURCE TOOL ECOSYSTEM',
+    time: '2026.10',
+    desc: '围绕 Web AI Harness 与工程效率的开源组织。Room 负责项目归集与理念表达，具体工具保持独立，面向各自问题提供轻量、可复用的解决方案。',
+    tags: ['开源组织', 'AI 工程化', 'Python', 'CLI / GUI'],
+    cover: { type: 'generated', theme: 'harness' },
+    children: [
+      {
+        title: 'GPC · GenerateProjectContext',
+        desc: '将代码项目整理为适合 AI 理解的 Markdown 上下文，包含语言感知降噪、AST 结构摘要与 Git 历史汇总。',
+        actions: [
+          { type: 'modal', key: 'gpc', label: '详细演示', primary: true },
+          { type: 'link', href: 'https://github.com/WebAIHarnessRoom/GenerateProjectContext', label: 'GitHub 仓库' },
+        ],
+      },
+      {
+        title: 'mkstruct · 项目结构创建',
+        desc: '将 tree 风格的结构文本转换为真实目录与空文件，支持结构识别、纠错和幂等安全操作。',
+        actions: [
+          { type: 'modal', key: 'mkstruct', label: '详细演示', primary: true },
+          { type: 'link', href: 'https://github.com/WebAIHarnessRoom/mkstruct', label: 'GitHub 仓库' },
+        ],
+      },
+    ],
+    actions: [{ type: 'link', href: 'https://webaiharnessroom.github.io/', label: '组织门户', primary: true }],
+  },
+  {
+    title: 'just-did',
+    subtitle: '本地优先的人生日志 · 桌面端 + 手机端',
+    kicker: 'CROSS-PLATFORM PRODUCT',
     time: '2026.06',
-    desc: '本地优先的跨端记录系统，桌面端唯一权威数据源，手机端扫码记录，两阶段同步与按批 ID 幂等提交。',
-    descHtml: '跨端记录系统，桌面端唯一权威数据源，手机端扫码记录，两阶段同步与按批 ID 幂等提交。<strong>手机端已上架华为应用商店</strong>',
-    tags: ['C++', 'Android', '可靠性'],
-    cover: { type: 'image', src: '/img/did.png', alt: 'just-did 人生日志' },
+    desc: '以本地数据为中心的跨端记录系统。桌面端作为权威数据源，手机端负责便捷记录；通过两阶段同步、批次幂等与启动恢复降低异常情况下的数据风险。',
+    tags: ['跨端应用', '本地优先', '可靠性设计', 'C++ / Kotlin'],
+    cover: { type: 'generated', theme: 'justdid' },
+    children: [
+      {
+        title: 'just-did-desktop · 桌面端',
+        desc: '负责本地数据管理与权威存储，提供桌面记录和同步服务。',
+        actions: [{ type: 'link', href: 'https://github.com/just-did/just-did-desktop', label: 'GitHub 仓库' }],
+      },
+      {
+        title: 'just-did-app · 手机端',
+        desc: '通过扫码连接桌面端，提交记录批次并查看日历与日报。',
+        actions: [{ type: 'link', href: 'https://github.com/just-did/just-did-app', label: 'GitHub 仓库' }],
+      },
+    ],
     actions: [
-      { type: 'modal', key: 'did', label: '详细演示', primary: true },
-      { type: 'link', href: 'https://just-did.zhouyp.top/', label: '门户' },
+      { type: 'modal', key: 'did', label: '产品演示', primary: true },
+      { type: 'link', href: 'https://just-did.zhouyp.top/', label: '产品门户' },
     ],
   },
   {
-    title: 'GCP · 代码上下文生成',
-    time: '2026.10',
-    desc: '把任意代码项目整理成 Markdown 上下文，语言感知降噪、AST 结构摘要、Git 历史汇总。',
-    tags: ['Python', 'Harness', 'CLI/GUI'],
-    cover: { type: 'image', src: '/img/gpc.png', alt: 'GPC' },
-    actions: [
-      { type: 'modal', key: 'gpc', label: '详细演示', primary: true },
-      { type: 'link', href: 'https://webaiharnessroom.github.io/', label: '门户', icon: 'github' },
-    ],
-  },
-  {
-    title: 'mkstruct · 项目结构创建',
-    time: '2026.10',
-    desc: 'tree 风格结构文本一键生成真实目录与空文件，自动识别与纠错、行内注释忽略、幂等安全。',
-    tags: ['Python', 'Harness', 'CLI/GUI'],
-    cover: { type: 'image', src: '/img/mkstruct.png', alt: 'mkstruct' },
-    actions: [
-      { type: 'modal', key: 'mkstruct', label: '详细演示', primary: true },
-      { type: 'link', href: 'https://webaiharnessroom.github.io/', label: '门户', icon: 'github' },
-    ],
-  },
-  {
-    title: 'ZPlateBlur · 车牌隐藏',
+    title: 'ZPlateBlur',
+    layout: 'wide',
+    subtitle: '本地视频车牌检测与脱敏工具',
+    kicker: 'LOCAL VISION UTILITY',
     time: '2025.08',
-    desc: '本地视频车牌检测与高斯模糊，跳帧加速、CPU/GPU 自适应，数据不出设备。',
-    tags: ['Python', 'YOLO'],
-    cover: { type: 'image', src: '/img/plateblur.gif', alt: '车牌隐藏' },
-    actions: [{ type: 'modal', key: 'plateblur', label: '详细演示', primary: true }],
-  },
-  {
-    title: 'szls-msp · 智能猫笼',
-    time: '2025.05',
-    desc: '猫砂盆控制前端，三维展示设备状态，与 ESP32 端侧实现交互。',
-    tags: ['Three.js', 'ESP32'],
-    cover: { type: 'image', src: '/img/znml.gif', alt: '智能猫笼' },
-    actions: [{ type: 'link', href: 'https://szls-msp.zhouyp.top/', label: '前往', primary: true }],
-  },
-  {
-    title: 'GAL · 宫格相册生成器',
-    time: '2025.03',
-    desc: '把照片排成可分享的宫格相册，关注视觉布局与组件化。',
-    tags: ['在线工具'],
-    cover: { type: 'image', src: '/img/gal.png', alt: '宫格相册生成器' },
-    actions: [{ type: 'link', href: 'https://gal.zhouyp.top/', label: '前往', primary: true }],
-  },
-  {
-    title: 'KEYI-RTIS · 内网截屏翻译',
-    time: '2022.11',
-    desc: '无网环境下截图取字与翻译，解决内网文字不可复制的问题。',
-    tags: ['Python', 'Tesseract-OCR'],
-    cover: { type: 'image', src: '/img/rtis.png', alt: '内网截屏翻译' },
-    actions: [{ type: 'modal', key: 'rtis', label: '详细演示', primary: true }],
-  },
-  {
-    title: 'KEYI-BLOG · 博客系统',
-    time: '2020.10',
-    desc: 'Spring / MyBatis / Shiro 分层架构实践，早期全栈项目。',
-    tags: ['Java', 'Spring', '全栈'],
-    cover: { type: 'text', title: 'KEYI-BLOG', sub: 'Java Web · 早期全栈' },
-    actions: [{ type: 'modal', key: 'blog', label: '开发过程', primary: true }],
+    desc: '面向本地视频的车牌检测与模糊处理工具，支持跳帧加速及 CPU / GPU 自适应，强调视频数据留在本地处理。',
+    tags: ['Python', '计算机视觉', 'YOLO', '本地隐私'],
+    cover: { type: 'image', src: '/img/plateblur.gif', alt: 'ZPlateBlur 车牌隐藏演示' },
+    actions: [
+      { type: 'modal', key: 'plateblur', label: '详细演示', primary: true },
+      { type: 'link', href: 'https://github.com/zhouyp001/PlateBlur', label: 'GitHub 仓库' },
+    ],
   },
 ]
 
@@ -181,7 +150,7 @@ export const timeline = {
 export const current = {
   left: {
     title: '当前关注',
-    text: '维护 just-did 与 WebAIHarnessRoom；端侧实时推理；AI 辅助工程；高并发缓存与稳定性。',
+    text: '持续迭代 AI 工程工具、跨端本地优先产品与端侧视觉计算，也关注系统设计、工程效率和可靠性。',
   },
   right: {
     title: '最近状态',
@@ -189,22 +158,3 @@ export const current = {
   },
 }
 
-export const about = {
-  rows: [
-    {
-      label: '身份',
-      html: 'Java 高并发与架构 / 视频流与 AI 工程化 / 开源分享。CSDN <code>ke_yi_</code>，GitHub <code>zhouyp001</code>。',
-    },
-    {
-      label: '可合作方向',
-      html: '高并发系统架构、视频流 + AI 工程化、跨端工具、开源工具链。欢迎技术交流、项目合作与工作机会。',
-    },
-  ],
-  actions: [
-    { label: '邮件', href: 'mailto:ke_yi_zhou@163.com' },
-    { label: 'GitHub', href: 'https://github.com/zhouyp001', icon: 'github' },
-    { label: 'CSDN', href: 'https://blog.csdn.net/ke_yi_' },
-    { label: 'just-did 门户', href: 'https://just-did.zhouyp.top/', icon: 'github' },
-    { label: 'WebAIHarnessRoom 门户', href: 'https://webaiharnessroom.github.io/', icon: 'github' },
-  ],
-}

@@ -37,6 +37,7 @@ defineProps({
       <div class="foot-bottom">
         <span>{{ bottomLeft }}</span>
         <span>技术画像的一部分，而非全部</span>
+        <a class="foot-email" href="mailto:ke_yi_zhou@163.com">ke_yi_zhou@163.com</a>
       </div>
     </div>
   </footer>
