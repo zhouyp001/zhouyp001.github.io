@@ -1,14 +1,30 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%234f46e5'/%3E%3Ctext x='16' y='21' font-size='14' font-family='-apple-system,sans-serif' font-weight='800' fill='%23fff' text-anchor='middle'%3EZ%3C/text%3E%3C/svg%3E">
-  <title>ZHOUYP · 个人门户</title>
-  <noscript><style>.reveal{opacity:1!important;transform:none!important}</style></noscript>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#eaf2ff">
+<meta name="description" content="ZHOUYP · 技术探索与创新实践：软件工程、AI 工具、跨端产品与本地优先架构。">
+<title>ZHOUYP · 技术探索与创新实践</title>
+<script>
+  /* 提前应用主题，避免刷新闪烁；同时同步 theme-color（原 theme-init.js，必须内联于首帧前） */
+  (function () {
+    'use strict';
+    try {
+      var dark = localStorage.getItem('theme') === 'dark';
+      if (dark) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      } else {
+        document.documentElement.removeAttribute('data-theme');
+      }
+      var meta = document.querySelector('meta[name="theme-color"]');
+      if (meta) meta.setAttribute('content', dark ? '#0b1422' : '#eaf2ff');
+    } catch (e) { /* localStorage 不可用时静默降级为日间 */ }
+  })();
+</script>
 </head>
 <body>
-  <div id="app"><!--app-html--></div>
-  <script type="module" src="/src/main.js"></script>
+<div id="app"></div>
+<script type="module" src="/src/main.js"></script>
 </body>
 </html>

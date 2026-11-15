@@ -1,17 +1,26 @@
-import HomeView from '@/views/HomeView.vue'
-import GithubView from '@/views/GithubView.vue'
-import CsdnView from '@/views/CsdnView.vue'
+import { createRouter, createWebHistory } from 'vue-router'
+import HomePage from '../pages/HomePage.vue'
+import ProjectsPage from '../pages/ProjectsPage.vue'
+import CsdnPage from '../pages/CsdnPage.vue'
 
-export const routes = [
-  { path: '/', name: 'home', component: HomeView },
-  { path: '/github', name: 'github', component: GithubView },
-  { path: '/csdn', name: 'csdn', component: CsdnView },
-  { path: '/:pathMatch(.*)*', redirect: '/' },
-]
+const router = createRouter({
+  history: createWebHistory(),
+  routes: [
+    { path: '/', name: 'home', component: HomePage },
+    { path: '/projects', name: 'projects', component: ProjectsPage },
+    { path: '/csdn', name: 'csdn', component: CsdnPage },
+    // 旧静态页面路径兼容
+    { path: '/index.html', redirect: '/' },
+    { path: '/projects.html', redirect: '/projects' },
+    { path: '/csdn.html', redirect: '/csdn' },
+    // 未知路径回首页
+    { path: '/:pathMatch(.*)*', redirect: '/' },
+  ],
+  scrollBehavior(to, from, savedPosition) {
+    if (to.hash) return { el: to.hash }
+    if (savedPosition) return savedPosition
+    return { top: 0 }
+  },
+})
 
-export function scrollBehavior(to, from, savedPosition) {
-  if (savedPosition) return savedPosition
-  if (to.hash) return { el: to.hash, top: 88, behavior: 'smooth' }
-  if (to.path !== from.path) return { top: 0 }
-  return {}
-}
+export default router

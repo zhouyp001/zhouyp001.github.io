@@ -1,0 +1,140 @@
+/* ============================================================
+   modal.css — 弹窗、文档查看器、Markdown 渲染
+   依赖 main.css 中的 :root 变量（--navy / --line / --blue / --muted / --mono）
+   ============================================================ */
+
+.modal{position:fixed;inset:0;z-index:200;display:none;align-items:center;justify-content:center;padding:24px}
+.modal.open{display:flex}
+.modal-backdrop{
+  position:absolute;inset:0;
+  background:rgba(8,15,26,.72);
+  backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);
+  animation:fade .2s ease;
+}
+@keyframes fade{from{opacity:0}to{opacity:1}}
+@keyframes pop{from{opacity:0;transform:translateY(10px) scale(.98)}to{opacity:1;transform:none}}
+
+.modal-content{
+  position:relative;width:min(920px,100%);max-height:88vh;
+  display:flex;flex-direction:column;
+  background:#fff;border-radius:18px;overflow:hidden;
+  box-shadow:0 40px 80px -30px rgba(0,0,0,.6);
+  animation:pop .25s cubic-bezier(.2,.8,.25,1);
+}
+html[data-theme="dark"] .modal-content{background:#101d30;box-shadow:0 40px 80px -30px rgba(0,0,0,.85)}
+
+.modal-head{
+  display:flex;align-items:center;justify-content:space-between;gap:16px;
+  padding:15px 22px;border-bottom:1px solid var(--line);
+}
+.modal-title{font-size:14px;font-weight:750;color:var(--navy);letter-spacing:-.01em;transition:color .35s ease}
+.modal-close{
+  width:34px;height:34px;flex:none;border-radius:10px;
+  border:1px solid var(--line);background:transparent;
+  color:var(--navy);font-size:18px;line-height:1;cursor:pointer;
+  display:grid;place-items:center;
+  transition:background-color .18s ease,color .18s ease;
+}
+.modal-close:hover{background:rgba(23,96,207,.08)}
+html[data-theme="dark"] .modal-close:hover{background:rgba(106,168,255,.14)}
+
+.modal-body{padding:20px 22px 22px;overflow:auto;background:rgba(232,240,251,.55)}
+html[data-theme="dark"] .modal-body{background:rgba(8,15,26,.4)}
+
+.modal-body .video{position:relative;width:100%;aspect-ratio:16/9;background:#000;border-radius:12px;overflow:hidden}
+.modal-body .video iframe{width:100%;height:100%;border:0;display:block}
+.modal-body .img-wrap{background:#0a1020;border-radius:12px;overflow:hidden;text-align:center}
+.modal-body .img-wrap img{max-width:100%;max-height:66vh;margin:0 auto;display:block}
+.modal-body .caption{font-size:12px;color:var(--muted);margin-top:10px;text-align:center}
+
+/* 文档加载状态 / 兜底 */
+.doc-status{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:48px 20px;gap:14px;text-align:center}
+.doc-spinner{
+  width:26px;height:26px;border-radius:50%;
+  border:3px solid rgba(91,139,211,.2);border-top-color:var(--blue);
+  animation:doc-spin .8s linear infinite;
+}
+@keyframes doc-spin{to{transform:rotate(360deg)}}
+.doc-status-text{font-size:13px;color:var(--muted);line-height:1.6;margin:0}
+
+.doc-fallback{background:#fff;border:1px dashed var(--line);border-radius:12px;padding:34px 24px;text-align:center}
+html[data-theme="dark"] .doc-fallback{background:#0d1828}
+.doc-fallback h5{font-size:15px;color:var(--navy);font-weight:700;margin:14px 0 6px}
+.doc-fallback p{font-size:13px;color:var(--muted);line-height:1.7;margin:0 0 18px}
+.doc-fallback-actions{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.placeholder-icon{
+  width:48px;height:48px;border-radius:14px;margin:0 auto;
+  background:linear-gradient(135deg,#347cf0,#16a6bd);
+  display:grid;place-items:center;color:#fff;font-size:20px;font-weight:800;
+}
+
+.btn-outline{
+  display:inline-flex;align-items:center;gap:6px;
+  font-size:12.5px;font-weight:650;padding:8px 16px;border-radius:9px;
+  border:1px solid var(--line);background:#fff;color:var(--navy);
+  cursor:pointer;font-family:inherit;
+  transition:border-color .18s ease,color .18s ease,background-color .18s ease;
+}
+.btn-outline:hover{border-color:rgba(23,96,207,.4);color:var(--blue);background:rgba(23,96,207,.05)}
+html[data-theme="dark"] .btn-outline{background:rgba(255,255,255,.06);border-color:rgba(140,180,240,.26)}
+html[data-theme="dark"] .btn-outline:hover{background:rgba(106,168,255,.14);border-color:rgba(106,168,255,.4)}
+
+/* Markdown 渲染 */
+.doc-markdown{
+  background:#fff;border-radius:12px;padding:24px 28px;
+  font-size:13.5px;line-height:1.85;color:var(--navy);
+  max-height:64vh;overflow:auto;
+}
+html[data-theme="dark"] .doc-markdown{background:#0d1828}
+.doc-markdown h1,.doc-markdown h2,.doc-markdown h3,.doc-markdown h4{
+  color:var(--navy);margin:1.4em 0 .6em;line-height:1.4;font-weight:700;
+}
+.doc-markdown h1{font-size:19px}
+.doc-markdown h2{font-size:16px;border-bottom:1px solid var(--line);padding-bottom:.4em}
+.doc-markdown h3{font-size:14.5px}
+.doc-markdown h4{font-size:13.5px}
+.doc-markdown p{margin:.7em 0}
+.doc-markdown ul,.doc-markdown ol{padding-left:1.4em;margin:.7em 0}
+.doc-markdown li{margin:.25em 0}
+.doc-markdown blockquote{
+  margin:.8em 0;padding:.5em 1em;
+  border-left:3px solid var(--blue);background:rgba(23,96,207,.06);
+  border-radius:0 8px 8px 0;
+}
+.doc-markdown code{
+  font-family:var(--mono);font-size:.86em;
+  background:rgba(91,139,211,.12);border:1px solid var(--line);
+  padding:1px 6px;border-radius:5px;color:var(--navy);
+}
+.doc-markdown pre{background:#0f172a;color:#e2e8f0;border-radius:10px;padding:16px 18px;overflow-x:auto;margin:1em 0}
+.doc-markdown pre code{background:transparent;border:0;padding:0;color:inherit;font-size:.86em}
+.doc-markdown img{max-width:100%;height:auto;border-radius:8px;margin:.8em 0;display:inline-block}
+.doc-markdown img.img-broken{
+  display:inline-block;min-width:80px;min-height:60px;
+  background:repeating-linear-gradient(45deg,#f1f5f9,#f1f5f9 8px,#e2e8f0 8px,#e2e8f0 16px);
+  border:1px dashed var(--line);border-radius:6px;color:transparent;font-size:0;
+}
+.doc-markdown table{width:100%;border-collapse:collapse;margin:1em 0;font-size:12.5px}
+.doc-markdown th,.doc-markdown td{border:1px solid var(--line);padding:8px 12px;text-align:left;vertical-align:top}
+.doc-markdown th{background:rgba(23,96,207,.07);color:var(--navy);font-weight:700}
+.doc-markdown hr{border:0;border-top:1px dashed var(--line);margin:1.4em 0}
+
+/* 响应式 */
+@media(max-width:850px){
+  .modal{padding:14px}
+  .modal-body{padding:14px}
+  .doc-markdown{padding:18px 16px;max-height:68vh}
+}
+@media(max-width:640px){
+  .modal{padding:10px}
+  .modal-head{padding:12px 16px}
+  .modal-body{padding:12px}
+  .doc-markdown{padding:16px 14px;font-size:13px}
+}
+@media (hover:none),(pointer:coarse){
+  .btn-outline{min-height:42px}
+}
+@media (prefers-reduced-motion: reduce){
+  .modal-backdrop,.modal-content{animation:none}
+  .doc-spinner{animation:none}
+}

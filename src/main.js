@@ -1,21 +1,11 @@
-import { ViteSSG } from 'vite-ssg'
-import { createHead } from '@unhead/vue'
-import { createPinia } from 'pinia'
+import { createApp } from 'vue'
 import App from './App.vue'
-import { routes, scrollBehavior } from './router'
-import reveal from './directives/reveal'
+import router from './router'
 
-import './styles/base.css'
-import './styles/home.css'
-import './styles/github.css'
+// 样式按原页面加载顺序全局引入：main → projects → csdn → modal
+import './styles/main.css'
+import './styles/projects.css'
 import './styles/csdn.css'
+import './styles/modal.css'
 
-export const createApp = ViteSSG(
-  App,
-  { routes, scrollBehavior },
-  ({ app }) => {
-    app.use(createPinia())
-    app.use(createHead())
-    app.directive('reveal', reveal)
-  }
-)
+createApp(App).use(router).mount('#app')
