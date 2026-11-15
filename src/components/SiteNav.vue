@@ -26,7 +26,7 @@ function onBurgerClick(e) {
         <RouterLink v-for="r in navRoutes" :key="r.to.path" :to="r.to">{{ r.label }}</RouterLink>
       </div>
       <div class="nav-actions">
-        <ThemeToggle />
+        <ThemeToggle class="nav-theme" />
         <button
           class="circle nav-burger"
           id="navBurger"

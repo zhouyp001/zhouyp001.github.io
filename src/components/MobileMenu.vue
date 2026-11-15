@@ -1,10 +1,14 @@
 <script setup>
 import { ref, computed, watch, onMounted, onBeforeUnmount } from 'vue'
 import { useRoute } from 'vue-router'
-import { mobileMenus } from '../data/nav'
+import { navRoutes } from '../data/nav'
+import { useTheme } from '../composables/useTheme'
 
 const route = useRoute()
-const items = computed(() => mobileMenus[route.path] || mobileMenus['/'])
+
+/* 主题切换：与顶栏 ThemeToggle 共用同一份模块级状态 */
+const { isDark, toggleTheme } = useTheme()
+const themeLabel = computed(() => (isDark.value ? '切换到日间模式' : '切换到夜间模式'))
 
 const menuEl = ref(null)
 const open = ref(false)
@@ -28,7 +32,12 @@ function syncAria() {
 
 watch(open, syncAria)
 
-/* 与原 site.js 行为一致：点空白、Esc、窗口 >640px、点链接、路由变化均收起 */
+/* 切换主题后保持菜单展开、焦点留在按钮上，方便连续切换预览 */
+function onThemeClick() {
+  toggleTheme()
+}
+
+/* 点空白、Esc、窗口 >640px、点链接、路由变化均收起 */
 function onDocClick(e) {
   if (menuEl.value && !menuEl.value.contains(e.target) && !(e.target && e.target.id === 'navBurger')) {
     closeMenu()
@@ -68,6 +77,17 @@ defineExpose({ toggleMenu, closeMenu })
 
 <template>
   <div ref="menuEl" class="mobile-menu" id="mobileMenu" :class="{ 'is-open': open }">
-    <RouterLink v-for="item in items" :key="item.label" :to="item.to" @click="closeMenu">{{ item.label }}</RouterLink>
+    <RouterLink v-for="item in navRoutes" :key="item.to.path" :to="item.to" @click="closeMenu">{{ item.label }}</RouterLink>
+
+    <button
+      class="mobile-theme"
+      type="button"
+      :aria-pressed="String(isDark)"
+      :aria-label="themeLabel"
+      @click="onThemeClick"
+    >
+      <span>{{ themeLabel }}</span>
+      <span class="mobile-theme-icon" aria-hidden="true"></span>
+    </button>
   </div>
 </template>

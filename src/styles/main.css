@@ -261,7 +261,20 @@ html[data-theme="dark"] .mobile-menu{
 }
 html[data-theme="dark"] .mobile-menu a:hover,
 html[data-theme="dark"] .mobile-menu a:active{background:rgba(106,168,255,.14)}
-
+/* 折叠菜单内的主题切换行（仅手机端可见） */
+.mobile-theme{
+  display:flex;align-items:center;justify-content:space-between;gap:10px;
+  width:100%;margin-top:4px;padding:12px 14px;border-radius:10px;
+  border:0;border-top:1px solid var(--line);
+  background:transparent;font:inherit;font-size:14px;font-weight:650;
+  color:var(--navy);text-align:left;cursor:pointer;
+  transition:background-color .2s ease,color .2s ease;
+}
+.mobile-theme:hover,.mobile-theme:active{background:rgba(23,96,207,.08)}
+.mobile-theme-icon::before{content:"☼";font-size:17px;line-height:1}
+html[data-theme="dark"] .mobile-theme:hover,
+html[data-theme="dark"] .mobile-theme:active{background:rgba(106,168,255,.14)}
+html[data-theme="dark"] .mobile-theme-icon::before{content:"☾"}
 /* ===== 6. Hero ===== */
 .hero{
   position:relative;min-height:390px;overflow:hidden;
@@ -922,3 +935,14 @@ footer{background:linear-gradient(115deg,#102747,#132f56);color:#fff;padding:28p
 #directions .direction-card:nth-child(3){--card-bg:url("/assets/images/backgrounds/bg-3.png")}
 #directions .direction-card:nth-child(4){--card-bg:url("/assets/images/backgrounds/bg-4.png")}
 #opensource.opensource-sec{--section-bg:url("/assets/images/backgrounds/bg-5.png")}
+/* ===== 手机端导航修正：汉堡贴右 + 主题切换移入折叠菜单 + 菜单不被 hero 裁剪 ===== */
+@media(max-width:640px){
+  /* hero 原本 overflow:hidden，会把展开的折叠菜单底部（主题切换行）裁掉 */
+  .hero, .page-hero{overflow:visible}
+
+  .nav{grid-template-columns:1fr auto}
+  .navlinks{display:none}
+  .nav-actions{justify-self:end}
+  .nav-actions .nav-theme{display:none}
+  .nav-burger{display:flex}
+}
