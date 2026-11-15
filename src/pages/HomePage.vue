@@ -129,7 +129,7 @@ usePageHead(
           <div class="sub">持续构建，持续分享</div>
         </div>
         <div class="os-social">
-          <a v-for="s in osSocial" :key="s.label" href="#">{{ s.label }}</a>
+          <a v-for="s in osSocial" :key="s.label" :href="s.href" target="_blank" rel="noopener">{{ s.label }}</a>
         </div>
       </div>
 

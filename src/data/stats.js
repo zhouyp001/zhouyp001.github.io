@@ -12,8 +12,8 @@ export const osStats = [
 export const osSnapshot = '最近 2026-11 快照'
 
 export const osSocial = [
-  { label: 'CSDN', href: '#' },
-  { label: 'GitHub', href: '#' },
+  { label: 'CSDN', href: 'https://blog.csdn.net/ke_yi_' },
+  { label: 'GitHub', href: 'https://github.com/zhouyp001' },
 ]
 
 export const csdnStats = [
